@@ -9,10 +9,12 @@ router
    			json: true
 		}, function (error, response, body) {
       if (!error && response.statusCode === 200) {
-        console.log(body.id);
-        res.json(body);
-
-
+          var hospitals = []
+          for (var i in body.results){
+              hospitals.push(body.results[i].name)
+          }
+          res.json(hospitals)
+        // res.json(body);
     }
   })
 	});
