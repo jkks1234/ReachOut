@@ -12,6 +12,7 @@ router
           var hospitals = []
           for (var i in body.results){
               hospitals.push(body.results[i].name)
+		  console.log('hey');
           }
           res.json(hospitals)
         // res.json(body);
